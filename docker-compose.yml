@@ -1,0 +1,15 @@
+services:
+  omniterm-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: omniterm-web
+    restart: unless-stopped
+    ports:
+      - "3200:3200"
+    networks:
+      - omniterm-net
+
+networks:
+  omniterm-net:
+    driver: bridge

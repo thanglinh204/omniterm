@@ -1,0 +1,31 @@
+# Control-plane API only; no frontend login or SSH gateway yet.
+services:
+  api:
+    build: ./server
+    init: true
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      OIDC_ISSUER: ${OIDC_ISSUER:?Configure a trusted HTTPS issuer}
+      OIDC_AUDIENCE: ${OIDC_AUDIENCE:?Configure the API audience}
+      OIDC_JWKS_URL: ${OIDC_JWKS_URL:?Configure the trusted HTTPS JWKS endpoint}
+    volumes:
+      - control-plane-data:/data
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 100
+    mem_limit: 512m
+    cpus: 1.0
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8080/healthz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+volumes:
+  control-plane-data:

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.tsbuildinfo
+src-tauri/target/
+server/data/
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
