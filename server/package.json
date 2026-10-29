@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=24.13.0 <25" },
+  "engines": {
+    "node": ">=24.13.0 <25"
+  },
   "scripts": {
     "start": "node src/main.mjs",
     "test": "node --test",
     "admin": "node src/admin.mjs"
   },
-  "dependencies": { "jose": "6.1.0" }
+  "dependencies": {
+    "jose": "6.1.0",
+    "ssh2": "^1.17.0",
+    "ws": "^8.22.0"
+  }
 }
