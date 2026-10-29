@@ -1,0 +1,15 @@
+{
+  "name": "@omniterm/web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OmniTerm Web Gateway & Standalone Control Plane",
+  "main": "src/main.mjs",
+  "scripts": {
+    "start": "node src/main.mjs",
+    "dev": "node --watch src/main.mjs"
+  },
+  "dependencies": {
+    "ssh2": "^1.16.0",
+    "ws": "^8.18.0"
+  }
+}

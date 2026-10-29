@@ -1,0 +1,27 @@
+services:
+  omniterm-web:
+    build:
+      context: ../..
+      dockerfile: deploy/docker/Dockerfile
+    image: omniterm-web:0.1.0
+    container_name: omniterm-web
+    restart: unless-stopped
+    ports:
+      - "3200:80"
+    volumes:
+      - omniterm_data:/app/server/data
+    environment:
+      - PORT=8080
+      - NODE_ENV=production
+      - STANDALONE=true
+      - DATA_DIR=/app/server/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1/api/resources || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  omniterm_data:
+    driver: local

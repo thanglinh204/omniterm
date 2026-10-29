@@ -1,0 +1,6 @@
+76f79f55558495ff8377147fba8cb8cfb4d45bd350fdee38ab070a1b0901e7f1  OmniTerm-Setup-v0.1.0-win-x64.exe
+165986f56b6147db9096a0892c709f677b27057f1d8615ca687b1cd69c7de970  OmniTerm-v0.1.0-win-x64.msi
+3c9513537a768cc53498e4d362254f165f982223a0ba4f2f310f37ff6ddade01  OmniTerm-v0.1.0-win-x64-portable.zip
+a43979d0242963c01d33e01d9c70da3fe4ef807a5dca9ec463faa605ef471876  OmniTerm-v0.1.0-linux-x64.deb
+ecae0f4f09dc1bce748d03bf8a7b56a3b4ad5141e72a1d81ddb768f8c4d382cf  OmniTerm-v0.1.0-linux-x64.rpm
+57f220ae07dd8172b122a9a98fbe29ac5b4f7521135c2c72632a58f4e3d5fbcf  OmniTerm-v0.1.0-linux-x64.AppImage

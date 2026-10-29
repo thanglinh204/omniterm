@@ -1,0 +1,12 @@
+{
+  "name": "@omniterm/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OmniTerm Native Desktop Client built with Tauri v2 and Rust",
+  "scripts": {
+    "dev": "npm --prefix ../.. run dev",
+    "build": "npm --prefix ../.. run tauri:build",
+    "build:windows": "cd ../.. && npx @tauri-apps/cli build",
+    "build:linux": "cd ../.. && cargo tauri build"
+  }
+}
